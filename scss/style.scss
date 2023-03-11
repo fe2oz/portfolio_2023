@@ -26,17 +26,17 @@ $white:rgba(255,255,255, .5);
 $orange:rgb(243, 156, 18);
 @mixin text_b{content:""; width:100%; height:160px; position:absolute; left:50%; top:50%; z-index:-1; transform:translate(-50%,-50%); margin-top:3px;}
 
-header{width:100%; position:fixed; left:0; top:0; z-index:99; margin-top:50px; border-top:1px solid $white; border-bottom:1px solid $white; color:$white; mix-blend-mode:difference; transition:all .25s ease-in-out;
-    .header-inner{width:1400px; height:65px; line-height:68px; display:flex; justify-content:space-between; margin:0 auto; color:#fff;
-        p{line-height:59px; font-size:32px;}
-        ul{height:100%; display:flex; align-items:center; gap:60px; margin:0;
-            li{
-                a{display:block; font-size:21px; color:#fff; text-transform:uppercase;}
-            }
-        }
-    }
-    &.scroll{margin-top:-1px; backdrop-filter:blur(10px);}
-}
+// header{width:100%; position:fixed; left:0; top:0; z-index:99; margin-top:50px; border-top:1px solid $white; border-bottom:1px solid $white; color:$white; mix-blend-mode:difference; transition:all .25s ease-in-out;
+//     .header-inner{width:1400px; height:65px; line-height:68px; display:flex; justify-content:space-between; margin:0 auto; color:#fff;
+//         p{line-height:59px; font-size:32px;}
+//         ul{height:100%; display:flex; align-items:center; gap:60px; margin:0;
+//             li{
+//                 a{display:block; font-size:21px; color:#fff; text-transform:uppercase;}
+//             }
+//         }
+//     }
+//     &.scroll{margin-top:-1px; backdrop-filter:blur(10px);}
+// }
 
 .circle{width:160px; height:160px; display:flex; align-items:center; justify-content:center; font-size:90px; border-radius:50%; background:#000; color:$orange;
     &_copy{width:160px; height:160px; background:#fff; border:8px solid #000; border-radius:50%;}
@@ -48,29 +48,43 @@ header{width:100%; position:fixed; left:0; top:0; z-index:99; margin-top:50px; b
     span{width:20px; height:111%; display:block; position:relative; margin-left:26px; transform:rotate(45deg); background:#000;}
 }
 
-.main_circle{width:500px; height:500px; position:absolute; top:-100%; left:50%; z-index:50; transform:translate(-50%, -50%); opacity:0; visibility:hidden; backdrop-filter:blur(5px); border-radius:50%; 
+.main_circle{width:500px; height:500px; position:fixed; top:-100%; left:50%; z-index:50; transform:translate(-50%, -50%); opacity:0; visibility:hidden; backdrop-filter:blur(5px); border-radius:50%; 
     box-shadow:
-    inset 30px 30px 90px 20px rgb(0 0 0 / 15%), 
-    inset 60px 60px 90px 20px rgb(0 0 0 / 8%), 
-    inset 100px 100px 100px 100px rgb(11 138 192 / 10%), 
-    inset 120px 120px 120px 120px rgb(11 138 192 / 15%), 
-    inset 130px 130px 130px 130px rgb(11 138 192 / 20%), 
-    inset -160px -160px 160px 160px rgb(184 179 246 / 40%), 
-    inset -250px -250px 160px 250px rgb(184 179 246 / 50%), 
-    inset -350px -250px 160px 350px rgb(184 179 246 / 60%), 
-    0px 0px 13px 4px rgb(255 255 255 / 30%), 
-    0px 0px 5px 1px rgb(255 255 255 / 22%);
-    transition:top 1.8s cubic-bezier(0.215, 0.61, 0.355, 1);
-    &.ani{bottom:auto; top:50%; opacity:1; visibility:visible; transition-delay:2s;}
+        inset 30px 30px 90px 20px rgb(0 0 0 / 15%), 
+        inset 60px 60px 90px 20px rgb(0 0 0 / 8%), 
+        inset 100px 100px 100px 100px rgb(11 138 192 / 10%), 
+        inset 120px 120px 120px 120px rgb(11 138 192 / 15%), 
+        inset 130px 130px 130px 130px rgb(11 138 192 / 20%), 
+        inset -160px -160px 160px 160px rgb(184 179 246 / 40%), 
+        inset -250px -250px 160px 250px rgb(184 179 246 / 50%), 
+        inset -350px -250px 160px 350px rgb(184 179 246 / 60%), 
+        0px 0px 13px 4px rgb(255 255 255 / 30%), 
+        0px 0px 5px 1px rgb(255 255 255 / 22%);
+    transition:
+        top 1.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+        bottom 1.8s cubic-bezier(0.215, 0.61, 0.355, 1), 
+        left 1.8s cubic-bezier(0.215, 0.61, 0.355, 1), 
+        width 1.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+        height 1.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+        z-index 1.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+        transform 1.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+    &.ani{bottom:auto; top:50%; opacity:1; visibility:visible; transition-delay:1.2s;}
+    &.move{width:400px; height:400px; top:auto; bottom:-60px; left:-30px; z-index:initial; transform:translate(0);
+        transition:
+            top 1.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+            bottom 1.8s cubic-bezier(0.215, 0.61, 0.355, 1), 
+            left 1.8s cubic-bezier(0.215, 0.61, 0.355, 1), 
+            width 1.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+            height 1.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+            z-index 1.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+            transform 1.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
 }
 .section01{position:relative; padding:180px 0 180px; 
     &-inner{width:1400px; margin:0 auto;
         .con-box{font-family:'Noto Serif', serif; color:#fff;
             h1{display:flex; align-items:center; justify-content:center; overflow:hidden; font-size:180px; font-family:'Montserrat', sans-serif; font-weight:normal; letter-spacing:3px; text-transform:uppercase;
                 span{height:219px; display:inline-block; opacity:0; visibility:hidden; transform:translateY(219px); overflow:hidden; transition:transform 1.8s cubic-bezier(0.215, 0.61, 0.355, 1); transition-property:transform;
-                    &.etc{position:relative; z-index:1; color:#000;
-                        &::before{@include text_b; background:#fff;}
-                    }
                     @for $i from 1 through 9{
                         &:nth-child(#{$i}){transition-delay:0.1s + $i/10;}
                     }
@@ -83,16 +97,50 @@ header{width:100%; position:fixed; left:0; top:0; z-index:99; margin-top:50px; b
     .section01-inner{
         .con-box{
             h1{
-                span{height:auto; transform:translateY(0); opacity:1; visibility:visible;}
+                span{transform:translateY(0); opacity:1; visibility:visible;}
             }
         }
     }
 }
 
 .section02{position:relative; margin:100px 0 0 0; color:#fff;
-    .txt-box{display:flex; flex-flow:column; margin:0 0 100px 60px; font-size:150px; font-family:"Noto Serif", serif;
-        & > div{display:flex; gap:50px;
-            p{display:flex;}
+    .txt-box{display:flex; flex-flow:column; margin:0 0 100px 60px; overflow:hidden; font-size:150px; font-family:"Noto Serif", serif;
+        & > div{display:flex; gap:50px; overflow:hidden;
+            p{display:flex;
+                span{height:204px; display:inline-block; opacity:0; visibility:hidden; transform:translateY(204px); overflow:hidden; transition:transform 1.8s cubic-bezier(0.215, 0.61, 0.355, 1); transition-property:transform;}
+            }
+            &:first-child{
+                p{
+                    span{
+                        @for $i from 1 through 9{
+                            &:nth-child(#{$i}){transition-delay:0.1s + $i/10;}
+                        }
+                    }
+                    &:last-child{
+                        span{
+                            @for $i from 1 through 9{
+                                &:nth-child(#{$i}){transition-delay:0.4s + $i/10;}
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-child{
+                p{
+                    span{
+                        @for $i from 1 through 9{
+                            &:nth-child(#{$i}){transition-delay:1.2s + $i/10;}
+                        }
+                    }
+                    &:last-child{
+                        span{
+                            @for $i from 1 through 9{
+                                &:nth-child(#{$i}){transition-delay:1.7s + $i/10;}
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     .con-box{display:grid; grid-template-columns:repeat(3,1fr); position:relative; margin:0 auto; border:1px solid rgba(255,255,255, .3); border-left:0;
@@ -141,6 +189,16 @@ header{width:100%; position:fixed; left:0; top:0; z-index:99; margin-top:50px; b
         60%{-ms-transform:translate(-15px, 15px); transform:translate(-15px, 15px);}
     }
 }
+.section02.ani{
+    .txt-box{
+        & > div{
+            p{
+                span{transform:translateY(0); opacity:1; visibility:visible;}
+            }
+        }
+    }
+}
+
 .section03{position:relative; margin-top:180px;
     &-inner{
         .txt-box{display:flex; align-items:center; justify-content:flex-end; margin-right:100px;
