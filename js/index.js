@@ -1,7 +1,7 @@
 // 변수 선언
 var header = document.querySelector('.at-header');
-var section02_conLi = document.querySelectorAll('.section02 .con-box li'); // 섹션02 - 최근 작업물
-var work = document.querySelectorAll('.comm');
+var scTwo_Li = document.querySelectorAll('.section02 .con-box li'); // 섹션02 - 최근 작업물
+var work = document.querySelectorAll('.workModal-wrap .comm');
 
 // 스크롤 이벤트
 window.addEventListener('scroll', function(){
@@ -15,23 +15,23 @@ window.addEventListener('scroll', function(){
 });
 
 // 메인 섹션02 - 최근 작업물
-for(var i=0; i<section02_conLi.length; i++){
-    section02_conLi[i].addEventListener('mouseover', function(){ // 각 섹션 마우스 호버 시 클래스 추가, 제거
+for(var i=0; i<scTwo_Li.length; i++){
+    scTwo_Li[i].addEventListener('mouseover', function(){ // 각 섹션 마우스 호버 시 클래스 추가, 제거
         this.classList.add('hover');
     });
-    section02_conLi[i].addEventListener('mouseout', function(){
+    scTwo_Li[i].addEventListener('mouseout', function(){
         this.classList.remove('hover');
         //this.classList.remove('active');
     });
 }
-function toggleWork(section02_conLi){
-    for(var i=0; i<section02_conLi.length; i++){
-        section02_conLi[i].addEventListener('click', function(e){
+function toggleWork(scTwo_Li){
+    for(var i=0; i<scTwo_Li.length; i++){
+        scTwo_Li[i].addEventListener('click', function(e){
             var conLi = this;
             console.log(conLi);
             
-            for(var i=0; i<section02_conLi.length; i++){
-                if(conLi != section02_conLi[i]){
+            for(var i=0; i<scTwo_Li.length; i++){
+                if(conLi != scTwo_Li[i]){
                     conLi[i].classList.remove('active');
                     work[i].classList.remove('show');
                 }else if(conLi.classList.contains('active') === true){
