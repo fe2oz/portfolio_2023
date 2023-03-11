@@ -2,6 +2,13 @@
 var header = document.querySelector('.at-header');
 var scTwo_Li = document.querySelectorAll('.section02 .con-box li'); // 섹션02 - 최근 작업물
 var work = document.querySelectorAll('.workModal-wrap .comm');
+var section = document.querySelectorAll('.section'); // 메인 각 섹션
+
+// 로딩 후 이벤트
+window.onload = function(){
+    document.querySelector('.section01').classList.add('ani');
+    document.querySelector('.main_circle').classList.add('ani');
+}
 
 // 스크롤 이벤트
 window.addEventListener('scroll', function(){
@@ -11,6 +18,14 @@ window.addEventListener('scroll', function(){
         header.classList.add('scroll');
     }else{
         header.classList.remove('scroll');
+    }
+
+    // 메인 각 섹션에 스크롤 닿을 시 ani 클래스 추가
+    for(var i=0; i<section.length; i++){
+        var scLocation = section[i].offsetHeight;
+        if(scrollTop >= scLocation){
+            section[i].classList.add('ani')
+        }
     }
 });
 
