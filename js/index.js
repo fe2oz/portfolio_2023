@@ -25,17 +25,15 @@ window.addEventListener('scroll', function(){
     // 메인 각 섹션에 스크롤 닿을 시 ani 클래스 추가
     for(var i=0; i<section.length; i++){
         var scLocation = section[i].offsetHeight;
-        var sc02_Location = document.querySelector('.section02 .txt-box').offsetHeight;
+        //var sc02_Location = document.querySelector('.section03 .txt-box').offsetHeight;
         if(scrollTop >= scLocation){
             section[i].classList.add('ani');
-        }else if(scrollTop >= sc02_Location){ // 섹션02의 경우 txt-box에 스크롤 닿을 시 ani 클래스 추가
-            document.querySelector('.section02').classList.add('ani');
         }else{
-            document.querySelector('.section02').classList.remove('ani');
+            //document.querySelector('.section03').classList.remove('ani');
         }
     }
-    // 섹션02 txt-box에 스크롤 닿을 시 메인 circle에 클래스 추가, 아니면 제거
-    if(scrollTop >= document.querySelector('.section02 .txt-box').offsetHeight){
+    // 섹션03 txt-box에 스크롤 닿을 시 메인 circle에 클래스 추가, 아니면 제거
+    if(scrollTop >= document.querySelector('.section02 .back-txt').offsetHeight - 200){
         circle.classList.add('move');
         document.querySelector('.section01').classList.add('move');
     }else{
@@ -44,7 +42,7 @@ window.addEventListener('scroll', function(){
     }
 });
 
-// 메인 섹션02 - 최근 작업물
+// 메인 섹션03 - 최근 작업물
 function toggleWork(scTwo_Li){
     for(var i=0; i<scTwo_Li.length; i++){
         scTwo_Li[i].addEventListener('mouseover', function(){ // 각 섹션 마우스 호버 시 클래스 추가, 제거
@@ -69,6 +67,6 @@ function toggleWork(scTwo_Li){
         });
     }
 }
-toggleWork(document.querySelectorAll('.section02 .con-box li'))
+toggleWork(document.querySelectorAll('.section03 .con-box li'))
 
 
