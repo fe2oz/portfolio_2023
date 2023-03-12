@@ -2,7 +2,7 @@
 var header = document.querySelector('.at-header');
 var circle = document.querySelector('.main_circle');
 var section = document.querySelectorAll('.section'); // 메인 각 섹션
-var scTwo_Li = document.querySelectorAll('.section02 .con-box li'); // 섹션02 - 최근 작업물
+//var scTwo_Li = document.querySelectorAll('.section02 .con-box li'); // 섹션02 - 최근 작업물
 var work = document.querySelectorAll('.workModal-wrap .comm');
 
 
@@ -60,18 +60,12 @@ function toggleWork(scTwo_Li){
             var conLi = this;
             console.log(conLi);
             
-            for(var i=0; i<scTwo_Li.length; i++){
-                if(conLi != scTwo_Li[i]){
-                    conLi[i].classList.remove('active');
-                    work[i].classList.remove('show');
-                }else if(conLi.classList.contains('active') === true){
-                    conLi.classList.remove('active');
-                    work[i].classList.remove('show');
-                }else{
-                    conLi.classList.add('active');
-                    work[i].classList.add('show');
-                }
+            if(conLi.classList.contains('hover') === true){
+                conLi.classList.add('active');
+            }else{
+                conLi.classList.remove('active');
             }
+
         });
     }
 }
