@@ -167,11 +167,10 @@ header{width:100%; position:fixed; left:0; top:0; z-index:99; margin-top:50px; b
                 &.hover{background:$orange;
                     &::before{transform:translate(10px, -10px);}
                     a{transform:translate(10px, -10px); color:#fff;}
-                    
-                }
-                &.active{
-                    &::before{transform:translate(-100px, -10px); opacity:0;}
-                    a{transform:translate(-100px, -10px); opacity:0;}
+                    &.active{
+                        &::before{transform:translate(-100px, -10px); opacity:0;}
+                        a{transform:translate(-100px, -10px); opacity:0;}
+                    }
                 }
             }
             &::after{content:""; width:100%; height:1px; position:absolute; left:0; top:50%; transform:translateY(-50%); background:rgba(255,255,255, .3);}
@@ -183,7 +182,7 @@ header{width:100%; position:fixed; left:0; top:0; z-index:99; margin-top:50px; b
                         iframe{width:100%; height:100%;}
                     }
                 }
-                &.active{opacity:1; visibility:visible;}
+                &.show{opacity:1; visibility:visible;}
             }
             .cut{height:100%; display:flex; align-items:center; position:absolute; top:0; right:40px; z-index:99; animation:bounce 2s infinite;
                 span{width:50px; height:7px; display:block; position:relative; transform:rotate(-45deg); background:#fff;

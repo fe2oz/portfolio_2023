@@ -459,12 +459,12 @@ header.scroll {
           transform: translate(10px, -10px);
   color: #fff;
 }
-.container_wide .section02 .con-box li.active::before {
+.container_wide .section02 .con-box li.hover.active::before {
   -webkit-transform: translate(-100px, -10px);
           transform: translate(-100px, -10px);
   opacity: 0;
 }
-.container_wide .section02 .con-box li.active a {
+.container_wide .section02 .con-box li.hover.active a {
   -webkit-transform: translate(-100px, -10px);
           transform: translate(-100px, -10px);
   opacity: 0;
@@ -506,7 +506,7 @@ header.scroll {
   width: 100%;
   height: 100%;
 }
-.container_wide .section02 .workModal-wrap .comm.active {
+.container_wide .section02 .workModal-wrap .comm.show {
   opacity: 1;
   visibility: visible;
 }

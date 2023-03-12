@@ -15,18 +15,18 @@ window.addEventListener('scroll', function(){
 });
 
 // 메인 섹션02 - 최근 작업물
-for(var i=0; i<scTwo_Li.length; i++){
-    scTwo_Li[i].addEventListener('mouseover', function(){ // 각 섹션 마우스 호버 시 클래스 추가, 제거
-        this.classList.add('hover');
-    });
-    scTwo_Li[i].addEventListener('mouseout', function(){
-        this.classList.remove('hover');
-        //this.classList.remove('active');
-    });
-}
 function toggleWork(scTwo_Li){
     for(var i=0; i<scTwo_Li.length; i++){
-        scTwo_Li[i].addEventListener('click', function(e){
+        scTwo_Li[i].addEventListener('mouseover', function(){ // 각 섹션 마우스 호버 시 클래스 추가, 제거
+            this.classList.add('hover');
+        });
+        scTwo_Li[i].addEventListener('mouseout', function(){
+            this.classList.remove('hover');
+            //this.classList.remove('active');
+        });
+    }
+    for(var i=0; i<scTwo_Li.length; i++){
+        scTwo_Li[i].addEventListener('click', function(){
             var conLi = this;
             console.log(conLi);
             
