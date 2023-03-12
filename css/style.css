@@ -6,7 +6,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 body {
   padding: 0;
-  padding-top: 118px;
   margin: 0;
   overflow-x: hidden;
   background: #000;
@@ -143,14 +142,20 @@ a {
 }
 
 .section01 {
+  height: 100vh;
   position: relative;
   padding: 180px 0 180px;
 }
 .section01-inner {
   width: 1400px;
+  height: 100%;
   margin: 0 auto;
 }
 .section01-inner .con-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Noto Serif", serif;
   color: #fff;
 }
@@ -202,11 +207,42 @@ a {
 .section01-inner .con-box h1 span:nth-child(9) {
   transition-delay: 1s;
 }
+.section01 .line {
+  width: 1px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+}
+.section01 .left_line {
+  height: 0;
+  bottom: 0;
+  right: calc(100% - 330px);
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-delay: 1.5s;
+}
+.section01 .right_line {
+  height: 0;
+  top: 0;
+  left: calc(100% - 330px);
+  transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-delay: 1.8s;
+}
 
 .section01.ani .section01-inner .con-box h1 span {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
+}
+.section01.ani .left_line {
+  height: 250px;
+}
+.section01.ani .right_line {
+  height: 450px;
+}
+
+.section01.move .left_line, .section01.move .right_line {
+  height: 0;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-delay: 0;
 }
 
 .section02 {

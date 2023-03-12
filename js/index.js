@@ -15,7 +15,7 @@ window.onload = function(){
 // 스크롤 이벤트
 window.addEventListener('scroll', function(){
     var scrollTop = window.scrollY;
-    // // 스크롤 값이 헤더 높이 값보다 커지면 클래스 추가, 삭제
+    // 스크롤 값이 헤더 높이 값보다 커지면 클래스 추가, 삭제
     // if(scrollTop >= header.offsetHeight){ 
     //     header.classList.add('scroll');
     // }else{
@@ -28,17 +28,19 @@ window.addEventListener('scroll', function(){
         var sc02_Location = document.querySelector('.section02 .txt-box').offsetHeight;
         if(scrollTop >= scLocation){
             section[i].classList.add('ani');
-        }else if(scrollTop >= sc02_Location){
+        }else if(scrollTop >= sc02_Location){ // 섹션02의 경우 txt-box에 스크롤 닿을 시 ani 클래스 추가
             document.querySelector('.section02').classList.add('ani');
         }else{
             document.querySelector('.section02').classList.remove('ani');
         }
     }
-    
+    // 섹션02 txt-box에 스크롤 닿을 시 메인 circle에 클래스 추가, 아니면 제거
     if(scrollTop >= document.querySelector('.section02 .txt-box').offsetHeight){
         circle.classList.add('move');
+        document.querySelector('.section01').classList.add('move');
     }else{
         circle.classList.remove('move');
+        document.querySelector('.section01').classList.remove('move');
     }
 });
 
